@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
 import { UilWind } from '@iconscout/react-unicons';
+import {WiHumidity} from "weather-icons-react";
+
+
+
 
 import './App.css'
 
@@ -50,30 +54,37 @@ function App() {
             value={query}
             // onKeyPress={search}
           />
-<br></br>
-          <button onClick={search}>Search</button>
+
+          <button onClick={search} id='srh-btn'>Search</button>
         </div>
         {(typeof weather.main != "undefined") ? (
         <div>
+           <div>
+                <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`} sizes='50px' alt='wth-img'></img>
+              </div>
+
+           <h1 className='temperature'>
+              {Math.round(weather.main.temp)}°c 
+              </h1>
+             
           <div className="location-box">
             <div className="location">{weather.name}, {weather.sys.country}</div>
             <div className="date">{dateBuilder(new Date())}</div>
           </div>
           <div className="weather-box">
             <div className="temp">
-             <p>
-              {Math.round(weather.main.temp)}°c
-              </p> 
-
+            
               <p className='wind-speed'>
                 {Math.round(weather.wind.speed)}km/h <span><UilWind /></span>
                 </p>
 
+                <p className='humidity'>
+                {Math.round(weather.main.humidity)}<span><WiHumidity size={28} /></span>  
+                </p>
+
+               
+
             </div>
-            <div className="weather">{weather.weather[0].main}</div>
-
-           
-
           
           </div>
         </div>

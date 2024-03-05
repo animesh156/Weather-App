@@ -1,18 +1,31 @@
 body {
 
-  background-color: rgb(180, 238, 211);
+  background-color: rgb(20, 20, 20);
 
 
 }
+.location-box {
+   margin-top: -20px;
+}
+
+#srh-btn {
+  margin-left: 8px;
+  padding: 10px;
+}
 
 .app {
-  border: 2px solid red;
+  border: 2px solid rgb(78, 77, 77);
   width: 100%;
   max-width: 400px;
-  height: 600px;
+  height: 580px;
   margin: auto;
   text-align: center;
-  background-image: url('cold-bg.jpg');
+  background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+  
+ opacity:0.8;
+ margin-top: 20px;
+ border-radius: 20px;
+ 
 }
 
 input {
@@ -20,10 +33,18 @@ input {
   border-radius: 8px;
   width: 60%;
   background-color: rgb(218, 244, 248);
+  margin-top: 5px;
+}
+
+.temperature {
+  font-size: 5rem;
+  color: rgb(194, 13, 68);
+  margin-top: -20px;
+
 }
 
 .location {
-  margin-top: 35px;
+  margin-top: 5px;
   font-size: xx-large;
   font-weight: 700;
   color: rgb(253, 12, 24);
@@ -32,11 +53,11 @@ input {
 
 .date {
   font-size: x-large;
-  color: rgb(9, 255, 1);
+  color: rgb(24, 7, 173);
   font-weight: 700;
 }
 .temp {
-  margin-top: 35px;
+  margin-top: 10px;
   font-size:xx-large;
    padding: 12px 25px;
    color: rgb(0, 67, 252);
@@ -64,7 +85,11 @@ button {
 }
 
 .wind-speed {
- font-size: xx-large;
+ font-size: 33px;
  color: rgb(252, 1, 156);
+}
+
+.humidity {
+  font-size: 33px; color: crimson;
 }
 
