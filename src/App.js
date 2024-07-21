@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { UilWind } from '@iconscout/react-unicons';
 import {WiHumidity} from "weather-icons-react";
@@ -17,6 +17,19 @@ const api = {
 function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
+
+  useEffect(
+    () => {
+     const city = "Darbhanga"
+      fetch(`${api.base}weather?q=${city}&units=metric&APPID=${process.env.REACT_APP_WEATHER_API}`)
+      .then(res => res.json())
+      .then(result => {
+        setWeather(result);
+        setQuery('');
+       
+      });
+    }
+  ,[])
 
   const search = evt => {
   
